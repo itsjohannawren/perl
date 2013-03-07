@@ -58,6 +58,9 @@ sub natural_sort ($$) {
 				# Digits sort by numeric value (integer, not float)
 				return (-1) if ($aPart < $bPart);
 				return (1) if ($aPart > $bPart);
+				# Numeric values are the same so string sort
+				return (-1) if ($aPart lt $bPart);
+				return (1) if ($aPart gt $bPart);
 
 			} elsif ($aClass == 1) {
 				# Letters sort with string comparison, but it's case-insensitive
